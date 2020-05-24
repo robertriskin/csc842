@@ -21,7 +21,7 @@ This script will check to see if any of the Windows Firewall Profiles are disabl
 * Windows 10 Operating System - at least version 1809
 * Powershell 5 - this should be included with the Windows 10 release
 
-# Installation
+# Installation/Usage
 1. Copy the redteam-sysinfo-v1.ps1 file or raw code to the target machine.
 2. Run the script:
 ```Powershell
