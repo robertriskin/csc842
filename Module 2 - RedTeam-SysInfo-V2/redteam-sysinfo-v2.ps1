@@ -371,6 +371,9 @@ Function Disable-WindowsDefender
 			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableRealtimeMonitoring -value 1
 			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableIOAVProtection -value 1
 			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableIntrusionPreventionSystem -value 1
+			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableScanOnRealtimeEnable -value 1
+			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender" -name DisableAntiSpyware -value 1
+			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender" -name DisableRealtimeMonitoring -value 1
 			echo "* Windows Defender has been disabled."
 		}
 	else	
