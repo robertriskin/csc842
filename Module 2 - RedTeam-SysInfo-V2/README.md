@@ -20,13 +20,13 @@ This script will check to see if any of the Windows Firewall Profiles are disabl
 # Version 2 Update Notes
 * FIXES - fixed bitlocker check when running against a machine that does not have bitlocker
 * FIXES - fixed the invoke-webrequest issue where if IE had not been run before, this function fails
+* FIXES - fixed proper Verb-Noun grammar in function names
+
 # NEW FEATURES
-* Implented Verb-Noun Grammar in functions
 * Implemented menu for active/passive functions to limit artifacts left behind
 * Implemented Powershell Logging/ScriptBlock Checking
 * Implemented Sysmon Checking
-* Implemented Post Exploitation Module including disabling Windows Defender, disabling sysmon, clearing eventlog, disabling powershell * * Logging/ScriptBlock Checking, downloading and executing secondary binary
-
+* Implemented Post Exploitation Module including disabling Windows Defender, disabling sysmon, clearing eventlog, disabling powershell script block logging, and downloading and executing secondary binary
 
 # Requirements
 * Windows 10 Operating System - at least version 1809
