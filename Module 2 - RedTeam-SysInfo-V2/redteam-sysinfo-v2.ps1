@@ -363,7 +363,7 @@ Function Clear-Eventlogs
 Function Disable-WindowsDefender
 {
 	#does initial check to validate that the windows defender key exists
-	if(test-path "hklm:\software\policies\microsoft\windows defender\real-time protection")
+	if(test-path "hklm:\software\policies\microsoft\windows defender")
 		{
 			#set options that will disable windows defender scanning and protection
 			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableBehaviorMonitoring -value 1
