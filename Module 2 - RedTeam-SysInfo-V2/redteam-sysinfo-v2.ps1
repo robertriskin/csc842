@@ -373,7 +373,7 @@ Function Disable-WindowsDefender
 					#set-itemproperty -path "hklm:\software\microsoft\windows defender\real-time protection" -name DisableRealtimeMonitoring -value 1
 					#set-itemproperty -path "hklm:\software\microsoft\windows defender" -name DisableAntiSpyware -value 1
 					#set-itemproperty -path "hklm:\software\microsoft\windows defender" -name DisableAntiVirus -value 1
-				}
+			#	}
 			#else	
 			#	{
 			#		echo " ! Windows Defender registry key does not exist !"
