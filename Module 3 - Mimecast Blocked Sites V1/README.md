@@ -1,7 +1,7 @@
 # mimecast-blocked-sites-v1.py
 This script is intended to be used as a graphical user interface tool to help Mimecast administrators quickly add malicious domains and/or e-mail addresses to their Blocked Senders group for instant usage.
 
-#General Details
+# General Details
 * Filename: mimecast-blocked-sites-v1.py
 * Authoer: Robert Riskin
 * Date: 2020/06/19
