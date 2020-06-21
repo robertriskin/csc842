@@ -22,7 +22,7 @@ This script is intended to be used as a graphical user interface tool to help Mi
 * https://www.mimecast.com/tech-connect/documentation/endpoint-reference/directory/add-group-member 
 * https://www.mimecast.com/tech-connect/documentation/endpoint-reference/directory/find-groups/
 
-#Installation/Usage
+# Installation/Usage
 1. Copy the mimecast-blocked-sites-v1.py file or raw code to the target machine
 2. Modify the base_url, access_key, secret_key, app_id, app_key, and blockedsendersid variables with those according to your Mimecast instance
 3. Run the script:
