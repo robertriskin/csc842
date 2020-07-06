@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mimecast_Real_Deal
+namespace Mimecast_Blocked-Sites-V2
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
