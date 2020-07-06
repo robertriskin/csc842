@@ -7,7 +7,7 @@ This application is intended to be used as a graphical user interface tool to he
 * Date: 2020/07/01
 * Description: A Visual C# WPF application that takes an e-mail or domain, checks that the e-mail is in valid format and/or a domain is not in the restricted list and then add the domain/e-mail to a specific group inside of Mimecast, for the purposes of this application it should be the blocked senders profile group.
 * Tested on Windows 10 1809
-* Notes: I ported part of this code from the Mimecast python API documentation from Python2 to Python3
+* Notes: I ported this from my python3.7 code to visual c#
 
 # Features
 * Add an e-mail address to a specific group inside of Mimecast
