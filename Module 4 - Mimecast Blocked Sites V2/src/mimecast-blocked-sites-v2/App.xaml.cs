@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Mimecast_Real_Deal
+namespace Mimecast_Blocked-Sites-V2
 {
     /// <summary>
     /// Interaction logic for App.xaml
